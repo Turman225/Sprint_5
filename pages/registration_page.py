@@ -11,7 +11,7 @@ class Registration_page(Base_model):
     user_name_input = '//fieldset[1]/div/div/input[@type="text"]'#Поле ввода имени
     user_mail_input = '//fieldset[2]/div/div/input[@type="text"]'#Поле ввода почты
     user_password_input = '//fieldset[3]/div/div/input[@type="password"]'#Поле ввода пароля
-    error_msg = '//p[@class="input__error text_type_main-default"]'
+    error_msg = '//p[@class="input__error text_type_main-default"]' #Сообщение об ошибке пароля
 
     # получаем сообщение об ошибке
     def get_error_msg(self):

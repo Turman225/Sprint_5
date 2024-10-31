@@ -13,7 +13,7 @@ class Base_model():
     user_account = "//*[text()='Личный Кабинет']"#Кнопка "личный кабинет"
     registration_btn = "//*[text()='Зарегистрироваться']" #Кнопка "зарегистрироваться"
     designer = "//*[text()='Конструктор']" #Кнопка "конструктор"
-    logo = '//a[@href="/"]'
+    logo = '//a[@href="/"]' #Логотип Stellar Burgers.
 
     def click_user_acc_btn(self):
         button = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.user_account)))

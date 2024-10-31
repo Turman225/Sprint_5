@@ -5,9 +5,9 @@ from pages.base_model import Base_model
 
 
 class Homme_page(Base_model):
-    buns = '//*[text()="Булки"]'
-    souses = '//*[text()="Соусы"]'
-    fillings = '//*[text()="Начинки"]'
+    buns = '//*[text()="Булки"]' #Вкладка с булками
+    souses = '//*[text()="Соусы"]'#Вкладка с соусами
+    fillings = '//*[text()="Начинки"]'#Вкладка с начинками
 
     def click_buns(self):
         tab = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.buns)))
