@@ -7,20 +7,20 @@ from pathlib import Path
 
 class Login_page(Base_model):
 
-    input_user_login = '//input[@type="text"]' #Поле ввода логина
-    input_user_password = '//input[@type="password"]'#Поле ввода пароля
-    login_btn = "//*[text()='Войти']" #Кнопка войти
-    recover_password = 'Восстановить пароль' #Кнопка восстановить пароль
-    user_name = '//input[@name="Name"]' #Поле с именем в личном кабинете
-    login_btn_in_home_page = '//button[@class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg"]' #Кнопка авторизации в главном меню
-    logout = '//button[@class="Account_button__14Yp3 text text_type_main-medium text_color_inactive"]' #Кнопка выхода
+    user_login = '//input[@type="text"]'
+    user_password = '//input[@type="password"]'
+    login_btn = "//*[text()='Войти']"
+    recover_password = 'Восстановить пароль'
+    user_name = '//input[@name="Name"]'
+    login_btn_in_home_page = '//button[@class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg"]'
+    logout = '//button[@class="Account_button__14Yp3 text text_type_main-medium text_color_inactive"]'
 
     # Заполнить все поля данными
     def fill_inputs_login(self, mail=None, password=None):
         if mail is not None:
-            self.write_in_field(self.input_user_login, mail)
+            self.write_in_field(self.user_login, mail)
         if password is not None:
-            self.write_in_field(self.input_user_password, password)
+            self.write_in_field(self.user_password, password)
 
     def click_login_btn(self):
         button = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.login_btn)))
