@@ -41,4 +41,5 @@ class Base_model():
         return elem.get_attribute('value')
 
     def assert_url(self, url):
+        WebDriverWait(self.driver, 10).until(lambda driver: driver.current_url == url)
         assert self.driver.current_url == url

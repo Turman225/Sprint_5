@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+import pages.data as log_pass
 
 @pytest.fixture(scope='module')
 def driver():
@@ -13,10 +14,8 @@ def driver():
 
 @pytest.fixture(scope='module')
 def login():
-    login = 'Turman225@gmail.com'
-    return login
+    return log_pass.login
 
 @pytest.fixture(scope='module')
 def password():
-    password = '123456'
-    return password
+    return log_pass.password

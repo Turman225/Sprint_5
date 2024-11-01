@@ -2,9 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from pages.base_model import Base_model
-import random
-import string
-import secrets
+
 
 class Registration_page(Base_model):
 
@@ -27,18 +25,7 @@ class Registration_page(Base_model):
         if password is not None:
             self.write_in_field(self.user_password_input, password)
 
-    # Генерируем почту
-    def generate_mail(self, length):
-        name = ''.join(random.choices(string.ascii_lowercase + string.digits, k=length))
-        domain = ['@mail.ru', '@gmail.com', '@yandex.ru']
-        mail = f'{name}{random.choice(domain)}'
-        return mail
 
-    # Генерируем пароль
-    def generate_secure_password(self, length):
-        characters = string.ascii_letters + string.digits + string.punctuation
-        password = ''.join(secrets.choice(characters) for _ in range(length))
-        return password
 
     # Проверка сообщения об ошибке
     def assert_text_in_error(self, text):
