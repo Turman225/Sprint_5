@@ -1,6 +1,7 @@
-import pages.data as data
+import data as data
 import pytest
 from pages.home_page import Homme_page
+
 
 class TestConstructor:
     @pytest.mark.parametrize('tab', ['Соусы', 'Начинки', 'Булки'])

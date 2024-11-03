@@ -1,6 +1,7 @@
-from pages.helpers import LogPass
-import pages.data as data
+from helpers import LogPass
+import data as data
 from pages.registration_page import Registration_page
+
 
 class TestRegistrationPage:
     def test_registration_fill_valid_data(self, driver):
